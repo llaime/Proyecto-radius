@@ -48,21 +48,26 @@ También se podrá crear administradores para que cualquier administrador pueda 
 
 ## Medios necesarios.
 
-1- Un ordenador capaz de manejar una maquina virtual, o poder instalar apache y sus modulos y freeradius.
-
-1- Un router en nuestro caso un mikrotik
-
-1- Dispositivos de prueba (móviles, portátiles, etc...)
+- Un Servidor
+- Freeradius
+- Apache2, php7.2, mysql-server (mariadb-server) , modulos de php (php7.2-ssh, php7.2-mysql)
+- Editor de texto (Visual Code Studio)
+- Un router (en nuestro caso un mikrotik)
+- Dispositivos de prueba (móviles, portátiles, etc...)
 
 ## 
 
 ## Planificación.
 
-·     Estudio de Radius: 20h
+·     Estudio de Radius: 5h
 
 ·     Instalación y configuración de Radius: 10h
 
+·     Instalación y configuración de Router: 5h
+
 ·     Planificación de Pagina web: 10h
+
+·     Planificación estudio y creacion de base de datos: 10h
 
 ·     Programación de pagina web: 130h
 
