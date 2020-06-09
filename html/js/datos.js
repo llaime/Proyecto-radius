@@ -402,8 +402,7 @@ function cambiarcontrano() {
         var ajax = new XMLHttpRequest();
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                //document.location.href = window.location.href
-                console.log(frase)
+                document.location.href = window.location.href
             }
         };
         ajax.open("POST", "../php/insert.php", true);
