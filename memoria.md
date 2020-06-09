@@ -84,7 +84,7 @@ Bien yo voy a utilizar una maquina con Debian 9 instalado, no hay ningún proble
 
 Vamos ha hacer muchas maniobras con la base de datos de Freeradius, por lo que vamos a verla de cerca por encima, para que cuando luego hagamos algo, se pueda entender que hemos hecho.
 
-![](C:\Users\Battlestation\Downloads\db_radius.png)
+![](img_memoria/db_radius.png)
 
 Esto sería un diagrama de la base de datos voy por partes:
 
