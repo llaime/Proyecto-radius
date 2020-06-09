@@ -1,0 +1,139 @@
+body {
+    background-color: rgb(224, 224, 224);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navi {
+    margin-bottom: 2%;
+    margin-right: 50%;
+}
+
+.insertar {
+    margin-right: 50%;
+}
+
+.interior {
+    text-align: center;
+}
+
+.mb-1 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.titulo {
+    margin-bottom: 3%;
+}
+
+.usu {
+    align-content: center;
+    text-align: center;
+}
+
+.tablota {
+    transform: scale(0.9);
+}
+
+@media (min-width: 1921px) {
+    .boton {
+        margin-top: 5%;
+        border: 1px solid black;
+        width: 300px;
+    }
+
+    .csv {
+        border: 1px solid grey;
+        margin-right: -35%;
+        margin-left: 35%;
+        margin-bottom: 2%;
+    }
+
+    .tablita {
+        margin-left: 35%;
+    }
+
+    .coldes {
+        width: 35%;
+    }
+}
+
+@media (min-width: 1361px) and (max-width: 1950px) {
+    .boton {
+        margin-top: 5%;
+        border: 1px solid black;
+        width: 300px;
+    }
+
+    .csv {
+        border: 1px solid grey;
+        margin-right: -35%;
+        margin-left: 35%;
+        margin-bottom: 2%;
+    }
+
+    .tablita {
+        margin-left: 35%;
+    }
+
+    .coldes {
+        width: 35%;
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1360px) {
+    .coldes {
+        width: 35%;
+    }
+
+    .boton {
+        margin-top: 5%;
+        border: 1px solid black;
+        width: 170px;
+    }
+
+    .csv {
+        border: 1px solid grey;
+        margin-right: -7%;
+        margin-left: 6%;
+        transform: scale(0.9);
+    }
+
+    .tablita {
+        margin-left: 10%;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1280px) {
+    .coldes {
+        width: 35%;
+    }
+
+    .boton {
+        margin-top: 5%;
+        border: 1px solid black;
+        width: 170px;
+    }
+
+    .csv {
+        border: 1px solid grey;
+        margin-right: -7%;
+        margin-left: 6%;
+        transform: scale(0.9);
+    }
+
+    .tablita {
+        margin-left: 10%;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 720px) {
+    .boton {
+        margin-top: 5%;
+        border: 1px solid black;
+        font-size: 0.8em;
+        width: 125px;
+    }
+}
