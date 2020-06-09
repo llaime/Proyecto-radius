@@ -149,7 +149,7 @@ La forma en la que ambas bases de datos se actualizan es mediante cron, que se e
 
 La base de datos que voy a mostrar ahora es la versión final. Voy a expresar todo el proceso de creación y porque cada cosa es que. Pero creo que mostrar un modelo E-R por cada modificación es innecesario.
 
-![](C:\Users\Battlestation\Downloads\sincrono.png)
+![](img_memoria/sincrono.png)
 
 Esta base de datos tiene tablas como usuario, cliente , grupo y usuario grupo que ya existen en la base de datos de radius, pero con la diferencia de que esta mejor organizado.
 
@@ -167,7 +167,7 @@ Desgraciadamente esa opción no se contempla en el proyecto, tras varios intento
 
 Una vez creados dentro de dicho grupo, se puede crear u usuario nuevo, o se puede relacionar un usuario de un grupo a otro. Las contraseñas generadas de forma aleatoria, están en una lista organizadas por grupos, y dichas contraseñas se pueden autogenerar pulsando un botón.
 
-![](C:\Users\Battlestation\Downloads\web_listauser.png)
+![](img_memoria/web_listauser.png)
 
 Aquí podemos ver lo comentado.
 
@@ -185,7 +185,7 @@ De todas formas los routers, al igual que los usuarios si se pueden añadir de f
 
 La lista que aparece en la web, muestra los campos con información útil de la base de datos, estos routers al igual que con los usuarios, si están en la base de datos de radius funcionan y si no no. El script sincroniza ambas bases de datos, ya que los routers, los usuarios y los grupos como hemos comentado anteriormente, se encuentran en la base de datos independiente y luego se juega con si esta en la de radius o no.
 
-![](C:\Users\Battlestation\Downloads\web_routers.png)
+![](img_memoria/web_routers.png)
 
 Aquí podemos ver un ejemplo, de la lista de los routers, su contraseña y una descripción. He de comentar que la contraseña del router no esta encriptada, no por el hecho no podamos verla en la lista, porque eso es lo de menos, si no porque si se hace una encriptación por md5, otro tipo de funciones para encriptar, tendríamos que poner el hash en el router, para que EAP lo tunelice, y lo compare con nuestro hash (EAP no se pensó para que las contraseñas viajaran ya encriptadas, si no en texto plano), por lo que tener un hash en vez de tener una contraseña en texto plano es lo mismo.
 
@@ -199,7 +199,7 @@ He intentado hacer accesos con inyecciones SQL  básicas, como `1=1` o ` ' and 1
 
 
 
-![image-20200606200940454](C:\Users\Battlestation\AppData\Roaming\Typora\typora-user-images\image-20200606200940454.png)
+![](img_memoria/web_login.png)
 
 El apartado de abajo indica que si has perdido la contraseña, no se puede regenerar, debido hay que no hay forma de contactar con el usuario como un correo, o no hay forma de autenticar al usuario aparte de su usuario y su contraseña. El tema administradores lo comentamos en el siguiente apartado.
 
@@ -213,7 +213,7 @@ Debido a que tener usuarios que se autocontrolen no es nada seguro, pues exige l
 
 Aunque los otros usuarios administradores, pueden acceder a la web, no pueden acceder a la pagina web de administración de usuarios, esa web solo puede accederse mediante el usuario super administrador.
 
-![](C:\Users\Battlestation\Downloads\web_admin.png)
+![](img_memoria/web_admin.png)
 
 Esta es la lista y la gestión de usuarios, podemos cambiar la contraseña borrarlos o añadirlos.
 
@@ -281,7 +281,7 @@ Esta ejecución si tiene varios problemas.
 
   Pues ahora si, en el momento que elegimos el grupo que queremos deshabilitar, y sabemos cuantas horas tienen que estar deshabilitados. Se almacena la hora y el grupo en una tabla, se hecha a todos los usuarios de dicho grupo y listo.
 
-  ![](C:\Users\Battlestation\Downloads\web_deshabilitar.png)
+  ![](img_memoria/web_deshabilitar.png)
 
 Para hacer la deshabilitación, el script guarda un dato tipo datetime, para que podamos tener claro el día y la hora que termina, simplemente por ser algo visual, es cierto que el año creo que es irrelevante, pero bueno que mas da.
 
@@ -303,13 +303,13 @@ Antes de crear esta tabla de esta forma, probar a crear datetimes, en vez de los
 
 Aquí dejo reflejado la interfaz:
 
-![](C:\Users\Battlestation\Downloads\web_semanal.PNG)
+![](img_memoria/web_semanal.PNG)
 
 En la interfaz escogemos un grupo a la izquierda, para seleccionarlo. Una vez que lo tenemos seleccionado, escogemos el día y el rango horario de ese día. Si por ejemplo no queremos que el miércoles haya conexión, lo dejamos en blanco, todos los campos que estén en blanco no se añaden. Si quieres que el lunes o cualquier día, tenga mas de una selección de rango horario, simplemente seleccionamos el rango y los demás los dejamos en blanco y se añadirá.
 
 Y:
 
-![](C:\Users\Battlestation\Downloads\web_horario.PNG)
+![](img_memoria/web_horario.PNG)
 
 Como podemos ver, la lista de horarios simplemente es una lista, de todos los horario de los grupos. Están ordenados por día y hora, y además si queremos borrar algo, podemos borrar el horario del grupo entero, o solo un horario.
 
@@ -317,7 +317,7 @@ Como podemos ver, la lista de horarios simplemente es una lista, de todos los ho
 
 El último apartado de la web es un histórico, de todas las conexiones que ha habido. Se muestra al usuario, la hora de inicio, la hora final, un recuento del tiempo en horas, minutos y segundos, y la mac y el router de dicho usuario. Esta tabla directamente coge los datos de la base de datos de radius, y esos datos los transformamos con un script. No tiene sentido tener una tabla en la otra base de datos por la duplicidad de información. Además si un usuario se borra, no se borra de dicha tabla de histórico, por lo que siempre podemos ver que es lo que ha sucedido a lo largo del tiempo.
 
-![](C:\Users\Battlestation\Downloads\web_historico.PNG)
+![](img_memoria/web_historico.PNG)
 
 ### CSS
 
@@ -327,11 +327,11 @@ Como ya he intentado hacer paginas web antes desde cero (como esta), programar c
 
 Aquí tenemos un ejemplo de lo que era antes, por ejemplo la imagen de histórico de arriba:
 
-![](C:\Users\Battlestation\Downloads\web_css1.PNG)
+![](img_memoria/web_css1.PNG)
 
 Y lo que es ahora:
 
-![](C:\Users\Battlestation\Downloads\web_css2.PNG)
+![](img_memoria/web_css2.PNG)
 
 Con respecto a la temática. Antes de que tuviera un aspecto como el que estamos viendo, solicité ayuda de alguien que entiende de estilo para que me diera unas pautas a seguir, como por ejemplo el color azul es algo que da seguridad, y como el servidor radius es una capa mas de seguridad pues es algo a sumar. También el color gris da una apariencia seria y de calma. Todas estas cosas que a mi como administrador de sistemas, me dan completamente igual.
 
@@ -453,15 +453,15 @@ Para poder ver que hace el servidor radius de freeradius, éste contiene una con
 
 Para acceder al **`mikrotik`** va a usar el programa `Winbox`:
 
-![](C:\Users\Battlestation\Downloads\winbox1.png)
+![](img_memoria/winbox1.png)
 
 Accedemos a nuestro router que es que aparece en pantalla:
 
-![](C:\Users\Battlestation\Downloads\winbox2.png)
+![](img_memoria/winbox2.png)
 
 Clickámos en `Quick Set`:
 
-![](C:\Users\Battlestation\Downloads\winbox3.png)
+![](img_memoria/winbox3.png)
 
 Configuramos el **`mikrotik`** para que este en modo bridge, con el gateway, nuestro router principal, asignándole una ip fija, (en este caso 192.168.1.150) y poniéndole de nombre a la red de "Mikrotik".
 
@@ -469,11 +469,11 @@ Ahora vamos al apartado `wireless` en el menú. Aparecerá una ventana llamada `
 
 Dentro de ella aparecerán los distintos interfaces wifis, vamos dentro de las pestañas al apartado `Security Profiles` y seleccionamos el único que nos aparece:
 
-![2](C:\Users\Battlestation\Desktop\proyectos\radius\2.png)
+![](img_memoria/.png)
 
 En `security profiles` estamos indicando el tipo de encriptación de las claves de acceso además de si son estáticas o dinámicas. Por último nos vamos al apartado radius del  **`mikrotik`** :
 
-![](C:\Users\Battlestation\Downloads\winbox4.png)
+![](img_memoria/winbox4.png)
 
 Aquí indicamos que va a haber un servidor radius que controle el apartado wireless, en la ip 192.168.1.190, y su secret que es prueba.
 
@@ -483,13 +483,13 @@ Si todo esta correcto, en nuestra consola de radius debug, debería aparecernos 
 
 Pero, no es así. En la consola se indica que el router está conectado, pero no que haya ningún usuario accediendo. Este problema me duro días de dolor de cabeza, el problema es que el servidor radius funcionaba y estaba bien configurado, porque si en vez para el wireless. lo situábamos para el login de `winbox` este funciona sin problemas. Y la consola en wireless no tiene movimiento. Y el problema es este:
 
-![](C:\Users\Battlestation\Downloads\winbox6.png)
+![](img_memoria/winbox6.png)
 
 Dentro de security profile, hay un apartado que dice EAP , hay podemos indicar el método EAP que vamos a usar, pues si no ponemos passtrhough no funciona. El problema es que el router estaba bien configurado, radius estaba bien configurado, pero todos los login que se estaban realizando, no se enviaban al servidor, el router los descartaba, porque no habíamos indicado que lo pasara al servidor. De esta forma ahora si debe de funcionar el acceso.
 
 Ya de paso para terminar vamos también a habilitar esta opción:
 
-![](C:\Users\Battlestation\Downloads\winbox5.png)
+![](img_memoria/winbox5.png)
 
 Esto sirve para que el accounting guarde informacion en la tabla radacct del servidor radius. Sin esta opcion, la tabla radacct estaría medio vacía, ya que cosas como la mac, la ip procedente, el tiempo de origen y destino, y etc... no estarían reflejados.
 
@@ -524,7 +524,7 @@ Por último para hacer que toda la web funcione, tenemos que hacer dos cosas:
 
 - Y si habéis modificado los usuarios pues meternos dentro del archivo conexion.incl.php y modificar las variables como lo hayáis puesto, en mi caso esta así:
 
-  ![](C:\Users\Battlestation\Downloads\conexion.PNG)
+  ![](img_memoria/conexion.PNG)
 
   Si el servidor es un servidor linux, por defecto no podemos logarnos en MySQL usando el usuario"root" por lo que tendríamos que crearnos un usuario para poder acceder con php.
   
